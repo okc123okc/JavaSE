@@ -21,7 +21,7 @@ public class InputStreamReaderDemo {
         while ((len=isr.read(chars))!=-1){
             System.out.println(new String(chars,0,len));
         }
-        //关闭资源
+        //关闭
         isr.close();
 
         //创建一个输出转换流
