@@ -29,7 +29,7 @@ public class FileCopyBufferDemo {
             bos.write(bytes, 0, len);
         }
 
-        //关闭资源
+        //关闭
         bis.close();
         bos.close();
 
