@@ -66,6 +66,48 @@ public class StudentsManage {
     }
 
     /**
+     * @Description: addStudent方法是 添加学生
+     * @param: [array]
+     * @return: void
+     */
+    private static void addStudent(ArrayList<Student> array) {
+        Scanner scanner = new Scanner(System.in);
+        String sid;
+        while (true) {
+            System.out.println("请输入学生ID");
+            sid = scanner.nextLine();
+            //判断学生id是否存在
+            boolean used = isUsed(array , sid);
+            if (used) {
+                System.out.println("该学生ID已使用，请重新输入！");
+            }else {
+                break;
+            }
+        }
+
+        System.out.println("请输入学生姓名");
+        String name = scanner.nextLine();
+        System.out.println("请输入学生年龄");
+        String age = scanner.nextLine();
+        System.out.println("请输入学生性别");
+        String sex = scanner.nextLine();
+        System.out.println("请输入学生地址");
+        String address = scanner.nextLine();
+
+        Student student = new Student();
+        student.setSid(sid);
+        student.setName(name);
+        student.setAge(age);
+        student.setSex(sex);
+        student.setAddress(address);
+
+        array.add(student);
+        System.out.println("===添加成功===");
+
+
+    }
+
+    /**
      * @Description: deleteStudent方法是 删除学生信息
      * @param: [array]
      * @return: void
@@ -131,48 +173,6 @@ public class StudentsManage {
         student.setAddress(address);
         array.set(index,student);
         System.out.println("=== 修改成功 ===");
-    }
-
-    /**
-     * @Description: addStudent方法是 添加学生
-     * @param: [array]
-     * @return: void
-     */
-    private static void addStudent(ArrayList<Student> array) {
-        Scanner scanner = new Scanner(System.in);
-        String sid;
-        while (true) {
-            System.out.println("请输入学生ID");
-            sid = scanner.nextLine();
-            //判断学生id是否存在
-            boolean used = isUsed(array , sid);
-            if (used) {
-                System.out.println("该学生ID已使用，请重新输入！");
-            }else {
-                break;
-            }
-        }
-
-        System.out.println("请输入学生姓名");
-        String name = scanner.nextLine();
-        System.out.println("请输入学生年龄");
-        String age = scanner.nextLine();
-        System.out.println("请输入学生性别");
-        String sex = scanner.nextLine();
-        System.out.println("请输入学生地址");
-        String address = scanner.nextLine();
-
-        Student student = new Student();
-        student.setSid(sid);
-        student.setName(name);
-        student.setAge(age);
-        student.setSex(sex);
-        student.setAddress(address);
-
-        array.add(student);
-        System.out.println("===添加成功===");
-
-
     }
 
     /**
